@@ -26,6 +26,9 @@ export default function Home() {
 
   async function afficherEvents1(){
     clearShapes();
+    const response = await axios.get("http://localhost:5269/api/Dessins/GetDrawing1");
+    console.log(response.data);
+    await applyEvents(response.data);
     // TODO: Il faut appeler le serveur pour obtenir l'event retourné
   }
 
